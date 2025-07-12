@@ -1,0 +1,174 @@
+/* ================================
+   Botones
+   ================================ */
+.btn {
+    /* Espaciado interno y estilo general del botón */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.btn--primario {
+    /* Estilo de botón primario */
+    background-color: var(--color-primario);
+    color: #fff;
+}
+.btn--secundario {
+    /* Estilo de botón secundario */
+    background-color: var(--color-secundario);
+    color: #000;
+}
+.btn:disabled {
+    /* Estilo para botón desactivado */
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ================================
+   Navbar
+   ================================ */
+.navbar {
+    /* Layout flexible horizontal para la barra de navegación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-primario);
+    color: white;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.navbar__menu a {
+    /* Enlaces dentro del navbar */
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* ================================
+   Tarjetas
+   ================================ */
+.card {
+    /* Estilo de tarjeta de contenido */
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    background: white;
+    margin-bottom: 1rem;
+}
+.card__titulo {
+    /* Título dentro de la tarjeta */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* ================================
+   Formulario
+   ================================ */
+.formulario input,
+.formulario select {
+    /* Inputs y selects del formulario */
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+/* ================================
+   Modal (ventana emergente)
+   ================================ */
+.modal {
+    /* Fondo oscuro que cubre toda la pantalla */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal--visible {
+    /* Mostrar modal cuando está activo */
+    display: flex;
+}
+.modal__contenido {
+    /* Caja blanca dentro del modal */
+    background: white;
+    padding: 2rem;
+    border-radius: var(--borde-radio);
+    position: relative;
+}
+.modal__cerrar {
+    /* Botón de cerrar (X) */
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* ================================
+   Tooltip (mensaje emergente)
+   ================================ */
+.tooltip {
+    position: relative;
+}
+.tooltip::after {
+    /* Texto del tooltip oculto por defecto */
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.tooltip:hover::after {
+    /* Mostrar tooltip al hacer hover */
+    opacity: 1;
+}
+
+/* ================================
+   Acordeón
+   ================================ */
+.acordeon__contenido {
+    /* Contenido que se expande/colapsa */
+    display: none;
+    padding: 1rem;
+    background: #eee;
+    margin-top: 0.5rem;
+    border-radius: var(--borde-radio);
+}
+.acordeon__cabecera {
+    /* Botón del acordeón */
+    background: var(--color-primario);
+    color: white;
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: var(--borde-radio);
+}
+
+/* ================================
+   Responsivo (media query)
+   ================================ */
+@media (max-width: 600px) {
+    .navbar {
+        /* Navbar en columna en pantallas pequeñas */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar__menu a {
+        /* Enlaces en bloque en móvil */
+        display: block;
+        margin: 0.5rem 0 0 0;
+    }
+}

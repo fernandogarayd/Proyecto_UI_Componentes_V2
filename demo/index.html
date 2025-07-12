@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca UI - Demo Interactiva</title>
+    
+    <!-- Importación de variables CSS, estilos base y estilos de componentes -->
+    <link rel="stylesheet" href="../styles/variables/variables.css" />
+    <link rel="stylesheet" href="../styles/base/base.css" />
+    <link rel="stylesheet" href="../styles/components/components.css" />
+</head>
+<body>
+    <!-- Navbar principal -->
+    <header class="navbar">
+        <h1 class="navbar__title">Biblioteca de Componentes UI</h1>
+        <nav class="navbar__menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#componentes">Componentes</a>
+            <a href="#acerca">Acerca</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <!-- Sección de bienvenida -->
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Esta biblioteca ha sido desarrollada como parte del curso de <strong>Desarrollo de Sistemas Informáticos</strong> en la Universidad Técnica de Manabí.</p>
+            <p>Explora cada sección para ver ejemplos interactivos de botones, tarjetas, formularios, modales, tooltips y acordeones.</p>
+        </section>
+
+        <!-- Sección de componentes UI -->
+        <section id="componentes">
+            <h2>Componentes UI</h2>
+
+            <!-- Botones -->
+            <article id="botones">
+                <h3>Botones</h3>
+                <button class="btn btn--primario">Primario</button>
+                <button class="btn btn--secundario">Secundario</button>
+                <button class="btn" disabled>Desactivado</button>
+            </article>
+
+            <!-- Tarjetas -->
+            <article id="tarjetas">
+                <h3>Tarjetas</h3>
+                <div class="card">
+                    <h4 class="card__titulo">Tarjeta Informativa</h4>
+                    <p class="card__contenido">Esta tarjeta contiene información útil para el usuario.</p>
+                </div>
+            </article>
+
+            <!-- Formularios -->
+            <article id="formularios">
+                <h3>Formulario</h3>
+                <form class="formulario">
+                    <input type="text" placeholder="Nombre completo" />
+                    <select>
+                        <option disabled selected>Seleccione una opción</option>
+                        <option>Estudiante</option>
+                        <option>Docente</option>
+                    </select>
+                    <label><input type="checkbox" /> Acepto los términos y condiciones</label>
+                    <button class="btn btn--primario" type="submit">Enviar</button>
+                </form>
+            </article>
+
+            <!-- Modal (ventana emergente) -->
+            <article id="modal">
+                <h3>Modal</h3>
+                <button onclick="document.querySelector('.modal').classList.add('modal--visible')" class="btn btn--primario">Mostrar Modal</button>
+                <div class="modal">
+                    <div class="modal__contenido">
+                        <!-- Botón para cerrar el modal -->
+                        <span onclick="document.querySelector('.modal').classList.remove('modal--visible')" class="modal__cerrar">&times;</span>
+                        <h4>Ventana Emergente</h4>
+                        <p>Este es un ejemplo de ventana modal.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tooltip -->
+            <article id="tooltip">
+                <h3>Tooltip</h3>
+                <button class="tooltip" data-tooltip="Información adicional del botón">Pasa el mouse</button>
+            </article>
+
+            <!-- Acordeón -->
+            <article id="acordeon">
+                <h3>Acordeón</h3>
+                <div class="acordeon">
+                    <div class="acordeon__item">
+                        <button class="acordeon__cabecera">¿Qué es un componente UI?</button>
+                        <div class="acordeon__contenido">Es una unidad reutilizable de diseño e interacción.</div>
+                    </div>
+                    <div class="acordeon__item">
+                        <button class="acordeon__cabecera">¿Por qué usar esta biblioteca?</button>
+                        <div class="acordeon__contenido">Facilita el desarrollo de interfaces consistentes y accesibles.</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de información adicional -->
+        <section id="acerca">
+            <h2>Acerca del Proyecto</h2>
+            Carrera: <strong>Tecnologías de la Información</strong><br>
+            Docente: <strong>Ing. Enrique Macías, Mg.</strong>
+            <p>Este proyecto demuestra el uso de técnicas modernas de CSS.</p>
+        </section>
+    </main>
+
+    <!-- Script para controlar el acordeón -->
+    <script>
+        document.querySelectorAll('.acordeon__cabecera').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Alterna la clase 'activo' en el botón del acordeón
+                btn.classList.toggle('activo');
+                let contenido = btn.nextElementSibling;
+                // Muestra u oculta el contenido del acordeón
+                contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

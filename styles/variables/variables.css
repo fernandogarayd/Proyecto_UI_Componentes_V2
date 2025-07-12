@@ -1,0 +1,26 @@
+/* ================================
+   Variables CSS globales
+   Definición de colores, tipografía y estilos base
+   ================================ */
+:root {
+    /* Color principal para elementos destacados (ej. botones primarios, navbar) */
+    --color-primario: #005f73;
+
+    /* Color secundario para elementos secundarios o alternativos */
+    --color-secundario: #94d2bd;
+
+    /* Color de fondo general de la página */
+    --color-fondo: #f0f0f0;
+
+    /* Color principal del texto */
+    --color-texto: #333;
+
+    /* Sombra estándar para tarjetas y elementos elevados */
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Radio de borde para esquinas redondeadas */
+    --borde-radio: 0.5rem;
+
+    /* Tipografía principal del sitio */
+    --fuente-principal: 'Segoe UI', sans-serif;
+}
